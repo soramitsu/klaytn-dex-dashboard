@@ -7,10 +7,9 @@
       :value="value"
       @input="handleValue"
       @focus="handleFocus"
-      @blur="handleBlur"
       class="search-input-field"
     />
-    <div v-if="value && focus" class="search-input-results">
+    <div v-if="value && showResults" class="search-input-results">
       <slot />
     </div>
   </div>
@@ -31,18 +30,26 @@ export default {
   },
   data() {
     return {
-      focus: false,
+      showResults: false,
     };
+  },
+  created() {
+    window.addEventListener('click', this.handleClick);
+  },
+  destroyed() {
+    window.removeEventListener('click', this.handleClick);
   },
   methods: {
     handleValue(value) {
       this.$emit('input', value);
     },
     handleFocus() {
-      this.focus = true;
+      this.showResults = true;
     },
-    handleBlur() {
-      this.focus = false;
+    handleClick(e) {
+      if (!this.$el.contains(e.target)){
+        this.showResults = false;
+      }
     }
   }
 };

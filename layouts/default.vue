@@ -12,9 +12,9 @@
       </div>
 
       <div class="col col-right">
-        <!-- <search-input v-model="query" placeholder="Search token/pool">
+        <search-input v-model="query" placeholder="Search token/pool">
           <search-results :results="searchResults" />
-        </search-input> -->
+        </search-input>
       </div>
     </header>
 
