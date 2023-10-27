@@ -8,6 +8,6 @@ def pipeline = new org.js.AppPipeline(
     dockerRegistryCred: 'bot-klaytn-rw',
     packageManager: 'yarn',
     buildCmds: ['yarn build'],
-    dockerImageTags: ['featureworkshop': 'local']
+    dockerImageTags: ['featureworkshop': 'local'],
     gitUpdateSubmodule: true)
 pipeline.runPipeline()
