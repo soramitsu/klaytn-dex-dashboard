@@ -3,8 +3,8 @@ import { trimTrailingSlash } from "./utils/formatters";
 export default {
   env: {
     subgraphEndpoint: trimTrailingSlash(process.env.SUBGRAPH_ENDPOINT || 'http://localhost:8000/subgraphs/name/klaytn-subgraph/exchange'),
-    explorerEndpoint: trimTrailingSlash(process.env.EXPLORER_ENDPOINT || 'https://baobab.scope.klaytn.com/'),
-    exchangeEndpoint: trimTrailingSlash(process.env.EXCHANGE_ENDPOINT || 'http://localhost/')
+    explorerEndpoint: trimTrailingSlash(process.env.EXPLORER_ENDPOINT || 'https://baobab.scope.klaytn.com'),
+    exchangeEndpoint: trimTrailingSlash(process.env.EXCHANGE_ENDPOINT || 'http://localhost')
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
